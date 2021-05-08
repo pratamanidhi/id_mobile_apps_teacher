@@ -1,6 +1,8 @@
-package com.tugas_akhir.myapplication
+package com.tugas_akhir.myapplication.Activity.MainActivity
 
 import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,9 +13,13 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
-import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.tugas_akhir.myapplication.Activity.Account.LoginActivity
+import com.tugas_akhir.myapplication.Endpoint.Endpoint
+import com.tugas_akhir.myapplication.R
+import com.tugas_akhir.myapplication.Adapter.TeacherAdapter
+import com.tugas_akhir.myapplication.Model.TeacherModel
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONException
 import org.json.JSONObject
@@ -26,15 +32,20 @@ class MainActivity : AppCompatActivity() {
     var list : ArrayList<TeacherModel> = ArrayList()
     var id_mapel : String = ""
     var id_tingkat : String = ""
+    lateinit var shp : SharedPreferences
+    lateinit var shpEditor: SharedPreferences.Editor
+    val login = LoginActivity()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         context = this
+        shp = this.getSharedPreferences(login.my_shared_preferences, Context.MODE_PRIVATE)
         getTingkatData()
         getMapelData()
         seacrh()
+        isLogout()
     }
 
     private fun seacrh(){
@@ -45,6 +56,20 @@ class MainActivity : AppCompatActivity() {
             searchService(obj)
 
         }
+    }
+
+    private fun isLogout(){
+        btn_logout.setOnClickListener {
+            logoutFunc()
+        }
+    }
+
+    private fun logoutFunc(){
+        shpEditor = shp.edit()
+        shpEditor.putBoolean(login.sessionStatus, false)
+        shpEditor.commit()
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
     }
 
 
@@ -152,18 +177,24 @@ class MainActivity : AppCompatActivity() {
                     val content = response.getJSONArray("content")
                     for( i in 0 until content.length()){
                         val item = content.getJSONObject(i)
+                        val id = item.getInt("id_guru").toString()
                         val name = item.getString("nama")
                         val phone_number = item.getString("nomer_telp")
                         val address = item.getString("alamat")
                         val id_mapel = item.getString("id_mapel")
                         val tingkat = item.getString("id_tingkat")
+                        val latitude = item.getString("latitude")
+                        val longitude = item.getString("longitude")
                         list.add(
                             TeacherModel(
+                                id,
                                 name,
                                 phone_number,
                                 address,
                                 id_mapel,
-                                tingkat
+                                tingkat,
+                                latitude,
+                                longitude
                             )
                         )
                         rv_orders.layoutManager = LinearLayoutManager(context)
