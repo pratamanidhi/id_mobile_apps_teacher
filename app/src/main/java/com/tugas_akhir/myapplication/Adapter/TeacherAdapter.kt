@@ -1,27 +1,30 @@
-package com.tugas_akhir.myapplication
+package com.tugas_akhir.myapplication.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
-import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.tugas_akhir.myapplication.Activity.DetailActivity.DetailActivity
+import com.tugas_akhir.myapplication.Endpoint.Endpoint
+import com.tugas_akhir.myapplication.R
+import com.tugas_akhir.myapplication.Model.TeacherModel
 import kotlinx.android.synthetic.main.list_teacher.view.*
-import kotlin.math.E
 
 class TeacherAdapter( val context: Context, val datas : ArrayList<TeacherModel>) : RecyclerView.Adapter<TeacherAdapter.ViewHolder>() {
     override fun getItemCount(): Int {
         return datas.size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeacherAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(context).inflate(R.layout.list_teacher, parent, false))
     }
 
-    override fun onBindViewHolder(holder: TeacherAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = datas[position]
         holder.name.text = data.name
         holder.phone_number.text = data.phone_number
@@ -51,6 +54,15 @@ class TeacherAdapter( val context: Context, val datas : ArrayList<TeacherModel>)
         })
         que1.add(req1)
 
+        holder.detail.setOnClickListener {
+
+            val intent = Intent(context, DetailActivity::class.java)
+            intent.putExtra("latitude", data.latitude)
+            intent.putExtra("longitude", data.longitude)
+            intent.putExtra("id", data.id)
+            context.startActivity(intent)
+        }
+
     }
 
     inner class ViewHolder(view : View) : RecyclerView.ViewHolder(view){
@@ -59,6 +71,7 @@ class TeacherAdapter( val context: Context, val datas : ArrayList<TeacherModel>)
         val address = view.edt_address
         val mapel = view.edt_matapelajaran
         val tingkat = view.edt_tingkat
+        val detail = view.btn_detail
     }
 
 }
