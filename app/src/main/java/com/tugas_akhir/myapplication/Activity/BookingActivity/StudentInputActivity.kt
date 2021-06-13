@@ -1,14 +1,17 @@
 package com.tugas_akhir.myapplication.Activity.BookingActivity
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.tugas_akhir.myapplication.Activity.Account.LoginActivity
+import com.tugas_akhir.myapplication.Activity.MainActivity.MainActivity
 import com.tugas_akhir.myapplication.Endpoint.Endpoint
 import com.tugas_akhir.myapplication.R
 import com.tugas_akhir.myapplication.Util.Util.Companion.showCalendar
@@ -160,13 +163,17 @@ class StudentInputActivity : AppCompatActivity() {
         val req = JsonObjectRequest(Request.Method.POST, Endpoint.BOOKING_TEACHER, obj, {
             response ->
             try {
-                Log.e("mess", response.toString())
+                Toast.makeText(this, "Sukses untuk memesan guru", Toast.LENGTH_LONG).show()
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
             }catch (e : JSONException){
                 Log.e("ERROR", e.toString())
+                Toast.makeText(this, "Terjadi kesalahan dalam pemesanan", Toast.LENGTH_LONG).show()
             }
         }, {
             error ->
             Log.e("ERROR", error.toString())
+            Toast.makeText(this, "Terjadi kesalahan dalam pemesanan", Toast.LENGTH_LONG).show()
         })
         que.add(req)
     }

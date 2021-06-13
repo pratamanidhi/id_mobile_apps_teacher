@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">My Application</string>
+    <array name="passenger_status_spinner">
+        <item>Mr.</item>
+        <item>Mrs.</item>
+        <item>Ms.</item>
+    </array>
 </resources>

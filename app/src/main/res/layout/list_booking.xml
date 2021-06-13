@@ -18,14 +18,36 @@
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp">
             <TextView
-                android:id="@+id/tv_name"
+                android:id="@+id/tv_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama Guru :"
+                android:text="Tanggal Les :"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:fontFamily="sans-serif-medium"
                 android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Waktu Les :"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date"
+                app:layout_constraintStart_toStartOf="parent"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                />
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Guru :"
+                app:layout_constraintTop_toBottomOf="@+id/tv_time"
+                app:layout_constraintStart_toStartOf="parent"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
                 />
             <TextView
                 android:id="@+id/tv_phone_number"
@@ -67,6 +89,24 @@
                 android:fontFamily="sans-serif-medium"
                 android:textColor="@color/black"
                 android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/edt_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name"
+                app:layout_constraintStart_toEndOf="@+id/tv_date"
+                app:layout_constraintTop_toTopOf="@+id/tv_date"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:id="@+id/edt_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name"
+                app:layout_constraintStart_toEndOf="@+id/tv_time"
+                app:layout_constraintTop_toTopOf="@+id/tv_time"
+                android:layout_marginStart="10dp"/>
 
             <TextView
                 android:id="@+id/edt_name"
@@ -112,7 +152,7 @@
                 android:id="@+id/btn_detail"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:text="Pilih"
+                android:text="Detail"
                 app:layout_constraintTop_toTopOf="@id/tv_tingkat"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="10dp"
