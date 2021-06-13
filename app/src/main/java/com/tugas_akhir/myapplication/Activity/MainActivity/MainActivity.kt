@@ -3,6 +3,7 @@ package com.tugas_akhir.myapplication.Activity.MainActivity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,11 +12,13 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.tugas_akhir.myapplication.Activity.Account.LoginActivity
+import com.tugas_akhir.myapplication.Activity.BookingActivity.BookingActivity
 import com.tugas_akhir.myapplication.Endpoint.Endpoint
 import com.tugas_akhir.myapplication.R
 import com.tugas_akhir.myapplication.Adapter.TeacherAdapter
@@ -23,6 +26,8 @@ import com.tugas_akhir.myapplication.Model.TeacherModel
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONException
 import org.json.JSONObject
+import java.time.Duration
+import java.time.Instant
 
 class MainActivity : AppCompatActivity() {
     lateinit var context: Context
@@ -37,6 +42,7 @@ class MainActivity : AppCompatActivity() {
     val login = LoginActivity()
 
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -44,18 +50,18 @@ class MainActivity : AppCompatActivity() {
         shp = this.getSharedPreferences(login.my_shared_preferences, Context.MODE_PRIVATE)
         getTingkatData()
         getMapelData()
-        seacrh()
+//        seacrh()
         isLogout()
+        btn_search.setOnClickListener {
+            searchService(id_mapel,id_tingkat)
+        }
+        btn_booking.setOnClickListener {
+            startActivity(Intent(this, BookingActivity :: class.java))
+        }
     }
 
     private fun seacrh(){
-        btn_search.setOnClickListener {
-            val obj = JSONObject()
-            obj.put("id_mapel", id_mapel)
-            obj.put("id_tingkat", id_tingkat)
-            searchService(obj)
 
-        }
     }
 
     private fun isLogout(){
@@ -102,6 +108,7 @@ class MainActivity : AppCompatActivity() {
                             val item_name = content_item.getString("nama_tingkat")
                             if (item == item_name){
                                 id_tingkat = content_item.getInt("id_tingkat").toString()
+                                Log.e("mess", id_tingkat)
                             }
                         }
                     }
@@ -148,6 +155,7 @@ class MainActivity : AppCompatActivity() {
                             val item_name = content_item.getString("nama_mapel")
                             if (item_name == item){
                                 id_mapel = content_item.getInt("id_mapel").toString()
+                                Log.e("mess", id_mapel)
                             }
                         }
                     }
@@ -165,7 +173,11 @@ class MainActivity : AppCompatActivity() {
         que.add(req)
     }
 
-    private fun searchService(obj : JSONObject){
+    private fun searchService(mapel : String, tingkat : String){
+        val obj = JSONObject()
+        obj.put("id_mapel", mapel)
+        obj.put("id_tingkat", tingkat)
+        Log.e("obj", obj.toString())
         val que = Volley.newRequestQueue(this)
         val req = JsonObjectRequest(Request.Method.POST, Endpoint.SEARCH_TEACHER, obj, {
             response ->
@@ -200,6 +212,7 @@ class MainActivity : AppCompatActivity() {
                         rv_orders.layoutManager = LinearLayoutManager(context)
                         adapter = TeacherAdapter(context, list)
                         rv_orders.adapter = adapter
+                        rv_orders.visibility = View.VISIBLE
                     }
                 }else{
                     rv_orders.visibility = View.GONE
@@ -214,4 +227,5 @@ class MainActivity : AppCompatActivity() {
         })
         que.add(req)
     }
+
 }
