@@ -4,20 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.MainActivity.MainActivity">
+    tools:context=".Activity.MainActivity.MainActivity"
+    android:background="@color/yellow">
     <TextView
         android:id="@+id/tv_mapel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pilih Matapelajaran"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        />
     <Spinner
         android:id="@+id/spinner_mapel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@id/tv_mapel"
-        app:layout_constraintTop_toBottomOf="@id/tv_mapel"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_mapel"
+        android:background="@drawable/background"/>
 
     <TextView
         android:id="@+id/tv_tingkat"
@@ -32,32 +35,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@id/tv_tingkat"
-        app:layout_constraintTop_toBottomOf="@id/tv_tingkat"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_tingkat"
+        android:background="@drawable/background"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_search"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="cari"
+        android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/spinner_tingkat"
         app:layout_constraintStart_toStartOf="@id/spinner_tingkat"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_main"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_logout"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="logout"
         app:layout_constraintStart_toEndOf="@+id/btn_search"
-        app:layout_constraintTop_toTopOf="@+id/btn_search" />
+        app:layout_constraintTop_toTopOf="@+id/btn_search"
+        android:background="@drawable/btn_main"
+        android:textColor="@color/white"
+        />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_booking"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="pemesanan"
         app:layout_constraintStart_toEndOf="@+id/btn_logout"
-        app:layout_constraintTop_toTopOf="@+id/btn_search" />
+        app:layout_constraintTop_toTopOf="@+id/btn_search"
+        android:background="@drawable/btn_main"
+        android:textColor="@color/white"/>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
