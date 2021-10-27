@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tugas_akhir.myapplication">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -21,12 +23,19 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDG39efWN_kSg8hrAHuf_ntwf0wQPwZUcs" />
 
-        <activity android:name=".Activity.Account.LoginActivity">
+<!--        <activity android:name=".Activity.Account.LoginActivity">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+        <activity android:name=".TestClass">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TestClass2"/>
         <activity android:name=".Activity.Account.RegisterActivity"/>
         <activity android:name=".Activity.MainActivity.MainActivity"/>
         <activity android:name=".Activity.DetailActivity.DetailActivity"/>
