@@ -53,14 +53,14 @@ class TeacherAdapter( val context: Context, val datas : ArrayList<TeacherModel>)
             error ->
         })
         que1.add(req1)
-
+        val intent = Intent(context, DetailActivity::class.java)
+        intent.putExtra("latitude", data.latitude)
+        intent.putExtra("longitude", data.longitude)
+        intent.putExtra("id", data.id)
+        context.startActivity(intent)
         holder.detail.setOnClickListener {
 
-            val intent = Intent(context, DetailActivity::class.java)
-            intent.putExtra("latitude", data.latitude)
-            intent.putExtra("longitude", data.longitude)
-            intent.putExtra("id", data.id)
-            context.startActivity(intent)
+
         }
 
     }

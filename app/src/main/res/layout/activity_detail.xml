@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/yellow">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -25,7 +26,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:cardCornerRadius="10dp">
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="@color/yellow">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -38,7 +40,8 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"/>
                 <TextView
                     android:id="@+id/edt_name"
                     android:layout_width="wrap_content"
@@ -47,7 +50,8 @@
                     android:fontFamily="sans-serif"
                     app:layout_constraintTop_toTopOf="@id/name"
                     app:layout_constraintStart_toEndOf="@id/name"
-                    android:layout_marginStart="5dp"/>
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/address"
@@ -57,7 +61,8 @@
                     android:fontFamily="sans-serif-medium"
                     app:layout_constraintTop_toBottomOf="@id/name"
                     app:layout_constraintStart_toStartOf="@id/name"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"/>
                 <TextView
                     android:id="@+id/edt_address"
                     android:layout_width="wrap_content"
@@ -66,7 +71,8 @@
                     android:fontFamily="sans-serif"
                     app:layout_constraintTop_toTopOf="@id/address"
                     app:layout_constraintStart_toEndOf="@id/address"
-                    android:layout_marginStart="5dp"/>
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/phone"
@@ -76,7 +82,8 @@
                     android:fontFamily="sans-serif-medium"
                     app:layout_constraintTop_toBottomOf="@id/address"
                     app:layout_constraintStart_toStartOf="@id/address"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"/>
                 <TextView
                     android:id="@+id/edt_phone"
                     android:layout_width="wrap_content"
@@ -85,7 +92,8 @@
                     android:fontFamily="sans-serif"
                     app:layout_constraintTop_toTopOf="@id/phone"
                     app:layout_constraintStart_toEndOf="@id/phone"
-                    android:layout_marginStart="5dp"/>
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/mapel"
@@ -95,7 +103,8 @@
                     android:fontFamily="sans-serif-medium"
                     app:layout_constraintTop_toBottomOf="@id/phone"
                     app:layout_constraintStart_toStartOf="@id/phone"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"/>
                 <TextView
                     android:id="@+id/edt_mapel"
                     android:layout_width="wrap_content"
@@ -104,7 +113,8 @@
                     android:fontFamily="sans-serif"
                     app:layout_constraintTop_toTopOf="@id/mapel"
                     app:layout_constraintStart_toEndOf="@id/mapel"
-                    android:layout_marginStart="5dp"/>
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/tingkat"
@@ -114,7 +124,8 @@
                     android:fontFamily="sans-serif-medium"
                     app:layout_constraintTop_toBottomOf="@id/edt_mapel"
                     app:layout_constraintStart_toStartOf="@id/mapel"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/edt_tingkat"
@@ -124,7 +135,8 @@
                     android:fontFamily="sans-serif"
                     android:text="sample"
                     app:layout_constraintStart_toEndOf="@id/tingkat"
-                    app:layout_constraintTop_toTopOf="@id/tingkat" />
+                    app:layout_constraintTop_toTopOf="@id/tingkat"
+                    android:textColor="@color/black"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_booking"
@@ -136,7 +148,8 @@
                     android:paddingRight="10dp"
                     android:text="Booking"
                     android:textAllCaps="false"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_main"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/edt_tingkat"
                     app:layout_constraintBottom_toBottomOf="parent"
