@@ -2,26 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/yellow">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama"
-        android:layout_marginStart="10dp"/>
+        android:layout_marginStart="10dp"
+        android:textColor="@color/black"/>
     <EditText
         android:id="@+id/edt_studentName"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="Username"
+        android:hint="Nama"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp"
+        android:background="@drawable/background"
+        android:padding="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama Guru"
-        android:layout_marginStart="10dp"/>
+        android:layout_marginStart="10dp"
+        android:textColor="@color/black"
+        />
     <EditText
         android:id="@+id/edt_teacherName"
         android:layout_width="match_parent"
@@ -30,91 +36,112 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="5dp"
-        android:editable="false"/>
+        android:editable="false"
+        android:background="@drawable/background"
+        android:padding="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Alamat"
-        android:layout_marginStart="10dp"/>
+        android:layout_marginStart="10dp"
+        android:textColor="@color/black"/>
     <EditText
         android:id="@+id/edt_teacherAddress"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="Username"
+        android:hint="Alamat"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="5dp"
-        android:editable="false"/>
+        android:editable="false"
+        android:background="@drawable/background"
+        android:padding="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Matapelajaran"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="10dp"/>
+        android:layout_marginStart="10dp"
+        android:textColor="@color/black"/>
     <EditText
         android:id="@+id/edt_teacherMapel"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="Password"
+        android:hint="Matapelajaran"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="5dp"
-        android:editable="false"/>
+        android:editable="false"
+        android:background="@drawable/background"
+        android:padding="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tingkat Sekolah"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="10dp"/>
+        android:layout_marginStart="10dp"
+        android:textColor="@color/black"/>
     <EditText
         android:id="@+id/edt_teacherTingkat"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="Password"
+        android:hint="Tingkat Sekolah"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="5dp"
-        android:editable="false"/>
+        android:editable="false"
+        android:background="@drawable/background"
+        android:padding="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Jam Les"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="10dp"/>
+        android:layout_marginStart="10dp"
+        android:textColor="@color/black"/>
     <EditText
         android:id="@+id/edt_jam"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="Password"
+        android:hint="Jam Les"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp"
+        android:background="@drawable/background"
+        android:padding="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tanggal Les"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="10dp"/>
+        android:layout_marginStart="10dp"
+        android:textColor="@color/black"/>
     <EditText
         android:id="@+id/edt_tanggal"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="edt_tanggal"
+        android:hint="Tanggal"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp"
+        android:background="@drawable/background"
+        android:padding="10dp"/>
 
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_booking"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_marginTop="20dp"/>
+        android:text="Dartar"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="right"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_main"
+        android:textColor="@color/white"/>
 
 </LinearLayout>
