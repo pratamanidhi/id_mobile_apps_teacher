@@ -2,7 +2,7 @@ package com.tugas_akhir.myapplication.Endpoint
 
 object Endpoint {
 
-    val URL = "http://192.168.0.106:5000"
+    val URL = "http://192.168.137.1:5000"
 
     val USER_LOGIN = URL + "/login"
     val USER_REGISTER = URL + "/client"
