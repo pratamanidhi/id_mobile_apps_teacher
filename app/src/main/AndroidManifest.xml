@@ -44,6 +44,7 @@
         <activity android:name=".Activity.DetailActivity.DetailActivity"/>
         <activity android:name=".Activity.BookingActivity.StudentInputActivity"/>
         <activity android:name=".Activity.BookingActivity.BookingActivity"/>
+        <activity android:name=".Activity.MainActivity.HomeActivity"/>
     </application>
 
 </manifest>

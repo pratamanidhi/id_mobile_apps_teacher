@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.tugas_akhir.myapplication.Activity.MainActivity.HomeActivity
 import com.tugas_akhir.myapplication.Endpoint.Endpoint
 import com.tugas_akhir.myapplication.Activity.MainActivity.MainActivity
 import com.tugas_akhir.myapplication.R
@@ -45,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
         session = shp.getBoolean(sessionStatus, false)
         cst_id = shp.getString(TAG_CST_ID, null).toString()
         if (session){
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             intent.putExtra(TAG_CST_ID, cst_id)
             startActivity(intent)
             finish()
@@ -56,6 +57,7 @@ class LoginActivity : AppCompatActivity() {
         val obj = JSONObject()
         obj.put("username", username)
         obj.put("password", password)
+        Log.e("mess", obj.toString())
 
         val que = Volley.newRequestQueue(this)
         val req = JsonObjectRequest(Request.Method.POST, Endpoint.USER_LOGIN, obj, {
@@ -70,7 +72,7 @@ class LoginActivity : AppCompatActivity() {
                     shpEditor.putBoolean(sessionStatus, true)
                     shpEditor.putString(TAG_CST_ID, cst_id)
                     shpEditor.commit()
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
                     finish()
                 }else{
