@@ -12,6 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.tugas_akhir.myapplication.Activity.Account.LoginActivity
 import com.tugas_akhir.myapplication.Activity.BookingActivity.BookingActivity
 import com.tugas_akhir.myapplication.Activity.Fragment.ClassFragment
+import com.tugas_akhir.myapplication.Activity.Fragment.DetailFragment
 import com.tugas_akhir.myapplication.Activity.Fragment.HomeFragment
 import com.tugas_akhir.myapplication.Activity.Fragment.ListFragment
 import com.tugas_akhir.myapplication.Interface.Communicator
@@ -65,6 +66,18 @@ class HomeActivity : AppCompatActivity(),Communicator {
         val fragment = ClassFragment()
         fragment.arguments = bundle
         transaction.replace(R.id.content,fragment)
+        transaction.addToBackStack(null)
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+        transaction.commit()
+    }
+
+    override fun _teacherId(id : String){
+        val bundle = Bundle()
+        bundle.putString("Id", id)
+        val transaction = this.supportFragmentManager.beginTransaction()
+        val fragment = DetailFragment()
+        fragment.arguments = bundle
+        transaction.replace(R.id.content, fragment)
         transaction.addToBackStack(null)
         transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
         transaction.commit()

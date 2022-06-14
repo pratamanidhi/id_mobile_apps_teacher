@@ -8,13 +8,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/drawable-v24/background.xml" value="0.2595" />
+        <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/drawable-v24/btn_cancel.xml" value="0.2595" />
+        <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/drawable-v24/rbtn_selector.xml" value="0.2595" />
+        <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/drawable-v24/rbtn_textcolor_selector.xml" value="0.2595" />
+        <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/layout/activity_booking.xml" value="0.3609375" />
         <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/layout/activity_choose.xml" value="0.28306159420289856" />
+        <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/layout/activity_detail.xml" value="0.3609375" />
         <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/layout/activity_home_new.xml" value="0.3609375" />
         <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.15092592592592594" />
-        <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/layout/fragment_booking.xml" value="0.1" />
+        <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/layout/fragment_booking.xml" value="0.5" />
         <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/layout/fragment_class.xml" value="0.3609375" />
         <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/layout/fragment_list.xml" value="0.3609375" />
+        <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/layout/rbtn_selector.xml" value="0.346875" />
+        <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/layout/test_layout.xml" value="0.3609375" />
         <entry key="..\:/Users/PAO PAO/TA_epan/fontend/MyApplication/app/src/main/res/menu/navigation.xml" value="0.3609375" />
       </map>
     </option>

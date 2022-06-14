@@ -11,11 +11,13 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.tugas_akhir.myapplication.Activity.DetailActivity.DetailActivity
 import com.tugas_akhir.myapplication.Endpoint.Endpoint
+import com.tugas_akhir.myapplication.Interface.Communicator
 import com.tugas_akhir.myapplication.R
 import com.tugas_akhir.myapplication.Model.TeacherModel
 import kotlinx.android.synthetic.main.list_teacher.view.*
 
 class TeacherAdapter( val context: Context, val datas : ArrayList<TeacherModel>) : RecyclerView.Adapter<TeacherAdapter.ViewHolder>() {
+    lateinit var communicator: Communicator
     override fun getItemCount(): Int {
         return datas.size
     }
@@ -53,12 +55,14 @@ class TeacherAdapter( val context: Context, val datas : ArrayList<TeacherModel>)
             error ->
         })
         que1.add(req1)
+        communicator = context as Communicator
         holder.detail.setOnClickListener {
-            val intent = Intent(context, DetailActivity::class.java)
-            intent.putExtra("latitude", data.latitude)
-            intent.putExtra("longitude", data.longitude)
-            intent.putExtra("id", data.id)
-            context.startActivity(intent)
+//            val intent = Intent(context, DetailActivity::class.java)
+//            intent.putExtra("latitude", data.latitude)
+//            intent.putExtra("longitude", data.longitude)
+//            intent.putExtra("id", data.id)
+//            context.startActivity(intent)
+            communicator._teacherId(data.id)
 
         }
 
@@ -72,5 +76,7 @@ class TeacherAdapter( val context: Context, val datas : ArrayList<TeacherModel>)
         val tingkat = view.edt_tingkat
         val detail = view.btn_detail
     }
+
+
 
 }
