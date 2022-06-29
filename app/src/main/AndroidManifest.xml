@@ -32,7 +32,7 @@
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
 <!--        </activity>-->
-        <activity android:name=".Activity.Account.LoginActivity">
+        <activity android:name=".Activity.MainActivity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -44,7 +44,7 @@
         <activity android:name=".Activity.DetailActivity.DetailActivity"/>
         <activity android:name=".Activity.BookingActivity.StudentInputActivity"/>
         <activity android:name=".Activity.BookingActivity.BookingActivity"/>
-        <activity android:name=".Activity.MainActivity.HomeActivity"/>
+<!--        <activity android:name=".Activity.MainActivity.HomeActivity"/>-->
     </application>
 
 </manifest>

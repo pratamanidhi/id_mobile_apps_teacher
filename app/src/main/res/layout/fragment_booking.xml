@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jam yang dipilih"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="10dp"
+            android:textColor="@color/black"/>
+        <RadioGroup
+            android:id="@+id/hours_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintStart_toStartOf="@id/title"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <RadioButton
+                android:id="@+id/hour_1_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rbtn_selector"
+                android:button="@null"
+                android:checked="false"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="hour_1"
+                android:textColor="@drawable/rbtn_textcolor_selector" />
+
+            <RadioButton
+                android:id="@+id/hour_2_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rbtn_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="hour_2"
+                android:layout_marginStart="20dp"
+                android:textColor="@drawable/rbtn_textcolor_selector" />
+
+            <RadioButton
+                android:id="@+id/hour_3_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rbtn_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_marginStart="20dp"
+                android:text="hour_3"
+                android:textColor="@drawable/rbtn_textcolor_selector" />
+
+            <RadioButton
+                android:id="@+id/hour_4_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rbtn_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_marginStart="20dp"
+                android:text="hour_4"
+                android:textColor="@drawable/rbtn_textcolor_selector" />
+        </RadioGroup>
+        <TextView
+            android:id="@+id/day_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jam yang dipilih"
+            app:layout_constraintTop_toBottomOf="@id/hours_selected"
+            app:layout_constraintStart_toStartOf="@id/hours_selected"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"/>
+        <RadioGroup
+            android:id="@+id/day_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/day_title"
+            app:layout_constraintStart_toStartOf="@id/day_title"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <RadioButton
+                android:id="@+id/day_1_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rbtn_selector"
+                android:button="@null"
+                android:checked="false"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="hour_1"
+                android:textColor="@drawable/rbtn_textcolor_selector" />
+
+            <RadioButton
+                android:id="@+id/day_2_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rbtn_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="hour_2"
+                android:layout_marginStart="20dp"
+                android:textColor="@drawable/rbtn_textcolor_selector" />
+
+            <RadioButton
+                android:id="@+id/day_3_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rbtn_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_marginStart="20dp"
+                android:text="hour_3"
+                android:textColor="@drawable/rbtn_textcolor_selector" />
+            <RadioButton
+                android:id="@+id/day_4_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rbtn_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_marginStart="20dp"
+                android:text="hour_4"
+                android:textColor="@drawable/rbtn_textcolor_selector" />
+            <RadioButton
+                android:id="@+id/day_5_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rbtn_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_marginStart="20dp"
+                android:text="hour_5"
+                android:textColor="@drawable/rbtn_textcolor_selector" />
+        </RadioGroup>
+        <TextView
+            android:id="@+id/duration_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Durasi yang dipilih"
+            app:layout_constraintTop_toBottomOf="@id/day_selected"
+            app:layout_constraintStart_toStartOf="@id/day_selected"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"/>
+        <RadioGroup
+            android:id="@+id/duration_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/duration_title"
+            app:layout_constraintStart_toStartOf="@id/duration_title"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <RadioButton
+                android:id="@+id/duration_1_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rbtn_selector"
+                android:button="@null"
+                android:checked="false"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="hour_1"
+                android:textColor="@drawable/rbtn_textcolor_selector" />
+
+            <RadioButton
+                android:id="@+id/duration_2_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rbtn_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="hour_2"
+                android:layout_marginStart="20dp"
+                android:textColor="@drawable/rbtn_textcolor_selector" />
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_booking_"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/btn_main"
+            android:fontFamily="sans-serif"
+            android:paddingRight="10dp"
+            android:text="Booking"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/duration_selected"
+            app:layout_goneMarginBottom="10dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
