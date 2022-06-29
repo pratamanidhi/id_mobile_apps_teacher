@@ -1,7 +1,7 @@
 package com.tugas_akhir.myapplication.Adapter
 
+import android.app.Activity
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import com.tugas_akhir.myapplication.Activity.DetailActivity.DetailActivity
 import com.tugas_akhir.myapplication.Endpoint.Endpoint
 import com.tugas_akhir.myapplication.Interface.Communicator
-import com.tugas_akhir.myapplication.R
 import com.tugas_akhir.myapplication.Model.TeacherModel
+import com.tugas_akhir.myapplication.R
 import kotlinx.android.synthetic.main.list_teacher.view.*
+
 
 class TeacherAdapter( val context: Context, val datas : ArrayList<TeacherModel>) : RecyclerView.Adapter<TeacherAdapter.ViewHolder>() {
     lateinit var communicator: Communicator
@@ -63,6 +63,7 @@ class TeacherAdapter( val context: Context, val datas : ArrayList<TeacherModel>)
 //            intent.putExtra("id", data.id)
 //            context.startActivity(intent)
             communicator._teacherId(data.id)
+            (context as Activity).finish()
 
         }
 

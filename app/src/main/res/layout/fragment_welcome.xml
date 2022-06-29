@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--            <androidx.appcompat.widget.AppCompatButton-->
+        <!--                android:id="@+id/btn_logout"-->
+        <!--                android:layout_width="100dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:background="@drawable/btn_main"-->
+        <!--                android:text="logout"-->
+        <!--                android:textColor="@color/white"-->
+        <!--                app:layout_constraintEnd_toStartOf="@+id/btn_booking"-->
+        <!--                app:layout_constraintTop_toTopOf="parent"-->
+        <!--                android:layout_marginEnd="10dp"-->
+        <!--                android:layout_marginTop="10dp"/>-->
+
+        <!--            <androidx.appcompat.widget.AppCompatButton-->
+        <!--                android:id="@+id/btn_booking"-->
+        <!--                android:layout_width="100dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:background="@drawable/btn_main"-->
+        <!--                android:text="pemesanan"-->
+        <!--                android:textColor="@color/white"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="parent"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:layout_marginEnd="10dp"/>-->
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Selamat datang di aplikasi pemesanan Bimbingan Belajar"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:text="Mulai Pesan"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="@+id/title"
+            app:layout_constraintStart_toStartOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

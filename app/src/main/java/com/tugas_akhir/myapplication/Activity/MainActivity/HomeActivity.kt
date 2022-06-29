@@ -11,10 +11,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.tugas_akhir.myapplication.Activity.Account.LoginActivity
 import com.tugas_akhir.myapplication.Activity.BookingActivity.BookingActivity
-import com.tugas_akhir.myapplication.Activity.Fragment.ClassFragment
-import com.tugas_akhir.myapplication.Activity.Fragment.DetailFragment
-import com.tugas_akhir.myapplication.Activity.Fragment.HomeFragment
-import com.tugas_akhir.myapplication.Activity.Fragment.ListFragment
+import com.tugas_akhir.myapplication.Activity.Fragment.*
 import com.tugas_akhir.myapplication.Interface.Communicator
 import com.tugas_akhir.myapplication.R
 import kotlinx.android.synthetic.main.activity_choose.*
@@ -52,14 +49,25 @@ class HomeActivity : AppCompatActivity(),Communicator {
         setContentView(R.layout.activity_choose)
         context = this
         navigation.setOnNavigationItemReselectedListener { mOnNavigationItemSelectedListener }
-        val fragment = HomeFragment.newInstance()
+        val fragment = WelcomeFragment.newInstance()
         addFragment(fragment)
 //        shp = this.getSharedPreferences(login.my_shared_preferences, Context.MODE_PRIVATE)
 //        button()
 //        isLogout()
     }
 
-    override fun schoolType(text: String) {
+    override fun _schoolType() {
+        val transaction = this.supportFragmentManager.beginTransaction()
+        val fragment = HomeFragment()
+        transaction.replace(R.id.content,fragment)
+        transaction.addToBackStack(null)
+//        transaction.remove(fragment)
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+        transaction.commit()
+    }
+
+
+    override fun classType(text: String) {
         val bundle = Bundle()
         bundle.putString("text", text)
         val transaction = this.supportFragmentManager.beginTransaction()
