@@ -18,9 +18,9 @@ import kotlinx.android.synthetic.main.activity_choose.*
 
 class HomeActivity : AppCompatActivity(),Communicator {
     lateinit var context: Context
-//    lateinit var shp : SharedPreferences
-//    lateinit var shpEditor: SharedPreferences.Editor
-//    val login = LoginActivity()
+    lateinit var shp : SharedPreferences
+    lateinit var shpEditor: SharedPreferences.Editor
+    val login = LoginActivity()
 
     private var content: FrameLayout? = null
 
@@ -51,7 +51,6 @@ class HomeActivity : AppCompatActivity(),Communicator {
         navigation.setOnNavigationItemReselectedListener { mOnNavigationItemSelectedListener }
         val fragment = WelcomeFragment.newInstance()
         addFragment(fragment)
-//        shp = this.getSharedPreferences(login.my_shared_preferences, Context.MODE_PRIVATE)
 //        button()
 //        isLogout()
     }
