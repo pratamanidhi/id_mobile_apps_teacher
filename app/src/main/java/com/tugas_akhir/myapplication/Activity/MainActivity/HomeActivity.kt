@@ -18,9 +18,9 @@ import kotlinx.android.synthetic.main.activity_choose.*
 
 class HomeActivity : AppCompatActivity(),Communicator {
     lateinit var context: Context
-//    lateinit var shp : SharedPreferences
-//    lateinit var shpEditor: SharedPreferences.Editor
-//    val login = LoginActivity()
+    lateinit var shp : SharedPreferences
+    lateinit var shpEditor: SharedPreferences.Editor
+    val login = LoginActivity()
 
     private var content: FrameLayout? = null
 
@@ -29,8 +29,12 @@ class HomeActivity : AppCompatActivity(),Communicator {
         when (item.itemId){
             R.id.home -> {
                 val fragment = HomeFragment()
+//                val fragment = DetailFragment()
                 addFragment(fragment)
                 return@OnNavigationItemSelectedListener true
+            }
+            R.id.history ->{
+
             }
         }
         false
@@ -51,7 +55,6 @@ class HomeActivity : AppCompatActivity(),Communicator {
         navigation.setOnNavigationItemReselectedListener { mOnNavigationItemSelectedListener }
         val fragment = WelcomeFragment.newInstance()
         addFragment(fragment)
-//        shp = this.getSharedPreferences(login.my_shared_preferences, Context.MODE_PRIVATE)
 //        button()
 //        isLogout()
     }
@@ -61,7 +64,6 @@ class HomeActivity : AppCompatActivity(),Communicator {
         val fragment = HomeFragment()
         transaction.replace(R.id.content,fragment)
         transaction.addToBackStack(null)
-//        transaction.remove(fragment)
         transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
         transaction.commit()
     }
@@ -85,7 +87,7 @@ class HomeActivity : AppCompatActivity(),Communicator {
         val transaction = this.supportFragmentManager.beginTransaction()
         val fragment = DetailFragment()
         fragment.arguments = bundle
-        transaction.replace(R.id.content, fragment)
+        transaction.replace(R.id.content,fragment)
         transaction.addToBackStack(null)
         transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
         transaction.commit()

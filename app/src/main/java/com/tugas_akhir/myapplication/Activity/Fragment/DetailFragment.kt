@@ -1,6 +1,8 @@
 package com.tugas_akhir.myapplication.Activity.Fragment
 
+import android.content.Context
 import android.content.DialogInterface
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,6 +15,7 @@ import androidx.fragment.app.Fragment
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.tugas_akhir.myapplication.Activity.Account.LoginActivity
 import com.tugas_akhir.myapplication.Endpoint.Endpoint
 import com.tugas_akhir.myapplication.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -27,6 +30,10 @@ class DetailFragment : Fragment() {
     var _hourId : String = ""
     var _dayId : String = ""
     var _durationId : String = ""
+    var user_id : String = ""
+    lateinit var shp : SharedPreferences
+    lateinit var shpEditor: SharedPreferences.Editor
+    val login = LoginActivity()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,6 +41,8 @@ class DetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _id = arguments?.getString("Id").toString()
+        shp = context!!.getSharedPreferences(login.my_shared_preferences, Context.MODE_PRIVATE)
+        user_id = shp.getString("cst_id", login.cst_id).toString()
         Log.e("ID:", _id)
         return inflater.inflate(R.layout.fragment_booking, container, false)
     }
@@ -44,7 +53,7 @@ class DetailFragment : Fragment() {
         getDay()
         getDuration()
         btn_booking_.setOnClickListener {
-            booking(_id, _hourId, _dayId,_durationId)
+            booking(_id, _hourId, _dayId,_durationId, user_id)
         }
     }
 
@@ -193,13 +202,14 @@ class DetailFragment : Fragment() {
         que.add(req)
     }
 
-    private fun booking(_teacherId : String, _hourId : String, _dayId : String,_durationId : String){
+    private fun booking(_teacherId : String, _hourId : String, _dayId : String,_durationId : String, _user_id : String){
         if (_teacherId != "" && _hourId != "" && _dayId != ""){
             val obj = JSONObject()
             obj.put("teacher_id", _teacherId)
             obj.put("hours_id", _hourId)
             obj.put("days_id", _dayId)
             obj.put("duration_id", _durationId)
+            obj.put("user_id",_user_id)
             Log.e("JSON :", obj.toString())
 
             val que = Volley.newRequestQueue(context)
@@ -216,6 +226,7 @@ class DetailFragment : Fragment() {
             })
             que.add(req)
         } else{
+
             Toast.makeText(context, "Silakan pilih Jam, Hari dan Durasi anda !!", Toast.LENGTH_LONG).show()
         }
 
