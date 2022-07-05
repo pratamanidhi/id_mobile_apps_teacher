@@ -226,6 +226,7 @@ class DetailFragment : Fragment() {
             })
             que.add(req)
         } else{
+
             Toast.makeText(context, "Silakan pilih Jam, Hari dan Durasi anda !!", Toast.LENGTH_LONG).show()
         }
 

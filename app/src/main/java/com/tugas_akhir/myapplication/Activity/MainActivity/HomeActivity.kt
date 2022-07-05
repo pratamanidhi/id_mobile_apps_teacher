@@ -29,8 +29,12 @@ class HomeActivity : AppCompatActivity(),Communicator {
         when (item.itemId){
             R.id.home -> {
                 val fragment = HomeFragment()
+//                val fragment = DetailFragment()
                 addFragment(fragment)
                 return@OnNavigationItemSelectedListener true
+            }
+            R.id.history ->{
+
             }
         }
         false
@@ -60,7 +64,6 @@ class HomeActivity : AppCompatActivity(),Communicator {
         val fragment = HomeFragment()
         transaction.replace(R.id.content,fragment)
         transaction.addToBackStack(null)
-//        transaction.remove(fragment)
         transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
         transaction.commit()
     }
@@ -84,7 +87,7 @@ class HomeActivity : AppCompatActivity(),Communicator {
         val transaction = this.supportFragmentManager.beginTransaction()
         val fragment = DetailFragment()
         fragment.arguments = bundle
-        transaction.replace(R.id.content, fragment)
+        transaction.replace(R.id.content,fragment)
         transaction.addToBackStack(null)
         transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
         transaction.commit()

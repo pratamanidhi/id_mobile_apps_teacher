@@ -57,13 +57,7 @@ class TeacherAdapter( val context: Context, val datas : ArrayList<TeacherModel>)
         que1.add(req1)
         communicator = context as Communicator
         holder.detail.setOnClickListener {
-//            val intent = Intent(context, DetailActivity::class.java)
-//            intent.putExtra("latitude", data.latitude)
-//            intent.putExtra("longitude", data.longitude)
-//            intent.putExtra("id", data.id)
-//            context.startActivity(intent)
             communicator._teacherId(data.id)
-            (context as Activity).finish()
 
         }
 
