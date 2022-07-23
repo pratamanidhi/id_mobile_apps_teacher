@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -23,40 +24,66 @@ class HomeActivity : AppCompatActivity(),Communicator {
     val login = LoginActivity()
 
     private var content: FrameLayout? = null
+    lateinit var bottomNav : BottomNavigationView
 
 
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-        when (item.itemId){
-            R.id.home -> {
-                val fragment = HomeFragment()
-//                val fragment = DetailFragment()
-                addFragment(fragment)
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.history ->{
-
-            }
-        }
-        false
-
-    }
-    fun addFragment(fragment: Fragment) {
-        supportFragmentManager
-            .beginTransaction()
-            .setCustomAnimations(R.anim.design_bottom_sheet_slide_in, R.anim.design_bottom_sheet_slide_out)
-            .replace(R.id.content, fragment, fragment.javaClass.getSimpleName())
-            .commit()
-    }
-
+//    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+//        when (item.itemId){
+//            R.id.home -> {
+//                Log.e("mess", "Home presses")
+//                val fragment = WelcomeFragment()
+//                addFragment(fragment)
+//                return@OnNavigationItemSelectedListener true
+//            }
+//            R.id.history ->{
+//                Log.e("mess", "History presses")
+//                val fragment = HistoryFragment()
+//                addFragment(fragment)
+//                return@OnNavigationItemSelectedListener true
+//            }
+//        }
+//        false
+//
+//    }
+//    fun addFragment(fragment: Fragment) {
+//        supportFragmentManager
+//            .beginTransaction()
+//            .setCustomAnimations(R.anim.design_bottom_sheet_slide_in, R.anim.design_bottom_sheet_slide_out)
+//            .replace(R.id.content, fragment, fragment.javaClass.getSimpleName())
+//            .commit()
+//    }
+//
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContentView(R.layout.activity_choose)
+//        context = this
+//        navigation.setOnNavigationItemReselectedListener { mOnNavigationItemSelectedListener }
+//        val fragment = WelcomeFragment()
+//        addFragment(fragment)
+//    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose)
-        context = this
-        navigation.setOnNavigationItemReselectedListener { mOnNavigationItemSelectedListener }
-        val fragment = WelcomeFragment.newInstance()
-        addFragment(fragment)
-//        button()
-//        isLogout()
+        loadFragment(WelcomeFragment())
+        navigation.setOnNavigationItemReselectedListener {
+            when (it.itemId) {
+                R.id.home -> {
+                    loadFragment(WelcomeFragment())
+                    return@setOnNavigationItemReselectedListener
+                }
+                R.id.history -> {
+                    loadFragment(HistoryFragment())
+                    return@setOnNavigationItemReselectedListener
+                }
+            }
+        }
+
+    }
+    private  fun loadFragment(fragment: Fragment){
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.content,fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 
     override fun _schoolType() {

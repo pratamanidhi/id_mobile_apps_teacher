@@ -1,9 +1,10 @@
 package com.tugas_akhir.myapplication.Model
 
 data class BookingModel (
-    val date : String = "",
-    val time : String = "",
-    val id : String = "",
-    val latitude : String = "",
-    val longitude : String = ""
+    val name : String = "",
+    val address : String ="",
+    val id_mapel : String = "",
+    val hours : String = "",
+    val days : String = "",
+    val duration : String = ""
         )
