@@ -75,6 +75,10 @@ class HomeActivity : AppCompatActivity(),Communicator {
                     loadFragment(HistoryFragment())
                     return@setOnNavigationItemReselectedListener
                 }
+                R.id.account -> {
+                    loadFragment(AccountFragment())
+                    return@setOnNavigationItemReselectedListener
+                }
             }
         }
 
@@ -157,17 +161,5 @@ class HomeActivity : AppCompatActivity(),Communicator {
 //
 //    }
 //
-//    private fun isLogout(){
-//        btn_logout.setOnClickListener {
-//            logoutFunc()
-//        }
-//    }
-//
-//    private fun logoutFunc(){
-//        shpEditor = shp.edit()
-//        shpEditor.putBoolean(login.sessionStatus, false)
-//        shpEditor.commit()
-//        startActivity(Intent(this, LoginActivity::class.java))
-//        finish()
-//    }
+
 }
