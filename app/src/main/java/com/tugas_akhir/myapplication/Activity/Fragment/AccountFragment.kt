@@ -1,5 +1,6 @@
 package com.tugas_akhir.myapplication.Activity.Fragment
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -26,6 +27,7 @@ class AccountFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        shp = context!!.getSharedPreferences(login.my_shared_preferences, Context.MODE_PRIVATE)
         isLogout()
     }
 
